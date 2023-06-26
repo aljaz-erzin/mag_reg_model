@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DWH</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5e35e57a-ce9c-42d9-8539-afb134ec1e90}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DWH</RootNamespace>
+    <AssemblyName>DWH</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\view_dim_ART_Artikli.sql" />
+    <Build Include="dbo\Tables\fact_TDS_PBI.sql" />
+    <Build Include="dbo\Tables\fact_PRE_PredictionsTrainTest.sql" />
+    <Build Include="dbo\Tables\fact_PRE_Predictions.sql" />
+    <Build Include="dbo\Tables\fact_OMK_OdkazilniManualKolicine.sql" />
+    <Build Include="dbo\Tables\fact_OIM_OdlocbeInManuali.sql" />
+    <Build Include="dbo\Tables\fact_NEW_TDS_V1_8.sql" />
+    <Build Include="dbo\Tables\fact_FIM_FeatureImportance.sql" />
+    <Build Include="dbo\Tables\fact_FEA_Features.sql" />
+    <Build Include="dbo\Tables\fact_DPD_DodatnoPosekanoDrevje.sql" />
+    <Build Include="dbo\Tables\fact_DOB_Dobavnice.sql" />
+    <Build Include="dbo\Tables\fact_DNK_DelovniNalogKolicine_New.sql" />
+    <Build Include="dbo\Tables\fact_DNK_DelovniNalogKolicine_DodatnoPosekano.sql" />
+    <Build Include="dbo\Tables\fact_DNK_DelovniNalogKolicine.sql" />
+    <Build Include="dbo\Tables\fact_DN_DelovniNalogi.sql" />
+    <Build Include="dbo\Tables\fact_COR_Correlation.sql" />
+    <Build Include="dbo\Tables\dim_VSE_VrstaSecnje.sql" />
+    <Build Include="dbo\Tables\dim_UNDS_UnknownDataSettings.sql" />
+    <Build Include="dbo\Tables\dim_TYP_Type.sql" />
+    <Build Include="dbo\Tables\dim_TRMS_TrainModelSettings.sql" />
+    <Build Include="dbo\Tables\dim_TAR_TarifniRazred.sql" />
+    <Build Include="dbo\Tables\dim_SEK_Sekaci.sql" />
+    <Build Include="dbo\Tables\dim_PES_PythonExecSettings.sql" />
+    <Build Include="dbo\Tables\dim_PE.sql" />
+    <Build Include="dbo\Tables\dim_OMP_OdkazilniManualParcela.sql" />
+    <Build Include="dbo\Tables\dim_OIM_OdlocbeInManuali.sql" />
+    <Build Include="dbo\Tables\dim_ODM_OdkazilniManual.sql" />
+    <Build Include="dbo\Tables\dim_Odlocbe_Ratio.sql" />
+    <Build Include="dbo\Tables\dim_ODL_Odlocbe.sql" />
+    <Build Include="dbo\Tables\dim_MLA_MLAlgorithms.sql" />
+    <Build Include="dbo\Tables\dim_KUP_Kupci.sql" />
+    <Build Include="dbo\Tables\dim_GO.sql" />
+    <Build Include="dbo\Tables\dim_GGO.sql" />
+    <Build Include="dbo\Tables\dim_GGE.sql" />
+    <Build Include="dbo\Tables\dim_DRV_DrevesnaVrsta_Bridge.sql" />
+    <Build Include="dbo\Tables\dim_DRV_DrevesnaVrsta.sql" />
+    <Build Include="dbo\Tables\dim_DN_DelovniNalogi.sql" />
+    <Build Include="dbo\Tables\dim_ART_Artikli.sql" />
+    <Build Include="dbo\Tables\ArtikliDrevesneVrste.sql" />
+    <Build Include="dbo\Views\RATIO_ODLOCBE.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v9_3_ANALISYS.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v9_3_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v9_3_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v9_3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v9.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_3_ANALISYS.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_3_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_3_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_1_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v8.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v7.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v6.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v5.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v4.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v10_3_ANALYSIS.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v10_3_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v10_3_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v10_3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v10.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_TrainTestDataSet_v1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_TDS_PBI.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v8_A.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v8.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v7.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v6.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v5.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v4.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_popravek.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_7.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_6.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_5.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_4.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V2_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V2_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_9.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_8.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_7.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_6.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_5.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_4.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_3.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_2.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_10.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_V1_1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_v1.sql" />
+    <Build Include="dbo\Stored Procedures\p_fact_NEW_TDS_PLOT_PRED_NETO.sql" />
+    <Build Include="dbo\Stored Procedures\p_dim_Odlocbe_Ratio.sql" />
+  </ItemGroup>
+</Project>
